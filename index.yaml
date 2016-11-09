@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  container-test:
+  - apiVersion: v1
+    created: 2016-11-09T20:33:49.751407724Z
+    description: A Helm chart to serve as template for container testing
+    digest: b821b4515f5191c0b6c8a157a0f158fe3b20b6b53f78afac0022a49d515fc2dc
+    name: container-test
+    urls:
+    - https://phnmnl.github.io/helm-charts/container-test-0.1.0.tgz
+    version: 0.1.0
+generated: 2016-11-09T20:33:49.750430637Z
