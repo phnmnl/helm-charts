@@ -1,0 +1,20 @@
+# Default values for container-test.
+# This is a YAML-formatted file.
+# Declare name/value pairs to be passed into your templates.
+# name: value
+
+# Variables to set:
+# shell - the shell to use, defaults to /bin/bash, but could be that you need to use a different one for your container
+# container - the complete identifier/name of the container to be tested
+# pod_name - optional, a name for the pod
+# download_cmd - the command to be invoked to download a script that will trigger the tests.
+# test_cmd - the command to be invoked to execute that script.
+#
+# Example:
+# container: "container-registry.phenomenal-h2020.eu/phnmnl/midcor:latest"
+# pod_name: "test-pod-midcor"
+# download_cmd: "wget github_file"
+# test_cmd: "chmod +x github_file && ./github_file"
+
+shell: "/bin/bash"
+pod_name: "test-pod" 
