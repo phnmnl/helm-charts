@@ -7,5 +7,5 @@ spec:
   containers:
   - name: container-test
     image: {{.Values.container}}
-    command: ["{{.Values.shell}}", "-c", "{{.Values.download_cmd}} && {{.Values.test_cmd}}"]
+    command: ["{{.Values.shell}}", "-c", "{{.Values.test_cmd}}"]
   restartPolicy: Never
