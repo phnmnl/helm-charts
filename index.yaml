@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   container-test:
   - apiVersion: v1
-    created: 2016-11-11T11:56:13.84862466Z
+    created: 2017-02-27T18:57:13.567405767Z
     description: A Helm chart to serve as template for container testing
     digest: 8dde2d2972f8464829654d6396db46da0bdea9f649f37cc2094075ad3c61bce8
     name: container-test
@@ -10,11 +10,20 @@ entries:
     - https://phnmnl.github.io/helm-charts/container-test-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2016-11-11T11:56:13.848306578Z
+    created: 2017-02-27T18:57:13.565841968Z
     description: A Helm chart to serve as template for container testing
     digest: b821b4515f5191c0b6c8a157a0f158fe3b20b6b53f78afac0022a49d515fc2dc
     name: container-test
     urls:
     - https://phnmnl.github.io/helm-charts/container-test-0.1.0.tgz
     version: 0.1.0
-generated: 2016-11-11T11:56:13.847540648Z
+  jupyter:
+  - apiVersion: v1
+    created: 2017-02-27T18:57:13.568292303Z
+    description: A Helm chart for deploying jupyter
+    digest: 18d8ef46e59954e096f5690fff607732ca80cb8b65bcd72d26595dc94e37ffc6
+    name: jupyter
+    urls:
+    - https://phnmnl.github.io/helm-charts/jupyter-0.1.0.tgz
+    version: 0.1.0
+generated: 2017-02-27T18:57:13.563730229Z
