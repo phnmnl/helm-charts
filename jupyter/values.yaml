@@ -1,0 +1,28 @@
+# Default values for jupyter.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+#
+# For using an ingress to galaxy.mydomain.dev use
+#
+# helm install --set use_ingress="yes",domain="mydomain.dev"
+#
+# For using an ingress to galaxy.mydomain.dev using an external ingress controller, use:
+#
+# helm install --set use_ingress="yes",domain="mydomain.dev",external_ingress_controller="yes"
+
+# Jupyter deployment
+jupyter_image_registry: ""
+jupyter_image: "pcm32/jupyter"
+jupyter_image_tag: ":no-matplotlib"
+jupyter_pull_policy: "Always"
+jupyter_internal_port: 8888
+jupyter_external_port: 8888
+jupyter_node_port_exposed: 30712
+jupyter_resource_req_memory: 2G
+jupyter_resource_req_cpu: 2
+jupyter_mount_path: "/home/jovyan/work"
+jupyter_pvc: "jupyter-volume-claim"
+jupyter_pvc_capacity: "1Gi"
+
+# Ingress
+domain: "mydomain.dev"
