@@ -1,0 +1,12 @@
+{{ if not .Values.pvc_exists }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{.Values.jupyter_pvc}}
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{.Values.jupyter_pvc_capacity}} 
+{{ end }}

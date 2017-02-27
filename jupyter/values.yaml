@@ -2,18 +2,30 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 #
-# For using an ingress to galaxy.mydomain.dev use
+# To run within minikube using a created persistent volume on /data/jupyter-data
 #
-# helm install --set use_ingress="yes",domain="mydomain.dev"
+# helm install --set pv_minikube="yes"
 #
-# For using an ingress to galaxy.mydomain.dev using an external ingress controller, use:
+# If you are re-using an existing Persistent Volume Claim (you don't want to create a new one)
+#
+# helm install --set pvc_exists="yes"
+#
+# To pre-define a password for jupyter
+# 
+# helm install --set passwd_jupyter="your-password" ...
+#
+# For using an ingress to jupyter.mydomain.dev use
+#
+# helm install --set use_ingress="yes",domain="mydomain.dev" ...
+#
+# For using an ingress to jupyter.mydomain.dev using an external ingress controller, use:
 #
 # helm install --set use_ingress="yes",domain="mydomain.dev",external_ingress_controller="yes"
 
 # Jupyter deployment
-jupyter_image_registry: ""
-jupyter_image: "pcm32/jupyter"
-jupyter_image_tag: ":no-matplotlib"
+jupyter_image_registry: "container-registry.phenomenal-h2020.eu/"
+jupyter_image: "phnmnl/jupyter"
+jupyter_image_tag: ":v387f29b6ca83_cv0.4.7"
 jupyter_pull_policy: "Always"
 jupyter_internal_port: 8888
 jupyter_external_port: 8888

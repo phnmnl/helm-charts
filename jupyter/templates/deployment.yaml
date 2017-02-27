@@ -32,12 +32,15 @@ spec:
       containers:
       - name: jupyter
         image: {{.Values.jupyter_image_registry}}{{.Values.jupyter_image}}{{.Values.jupyter_image_tag}}
-        args:
-            - "jupyter"
-            - "notebook"
-            {{ if .Values.sha1_pass_jupyter }}
-            - "--NotebookApp.password='{{.Values.sha1_pass_jupyter}}'"
-            {{ end }}
+        {{ if .Values.passwd_jupyter }}
+        env:
+            - name: "JUPYTERPWD"
+              valueFrom:
+                   secretKeyRef:
+                      name: jupyter-password-secret
+                      key: password
+        {{ end }}
+        command: ["tini", "--", "/bin/bash", "-c", "{{ if .Values.passwd_jupyter }}HASHEDPASS=`/usr/local/bin/generate-jupyter-hashed-password.sh $JUPYTERPWD` && {{ end }} jupyter notebook {{ if .Values.passwd_jupyter }}--NotebookApp.password=$HASHEDPASS{{ end }}"]
         ports:
           - containerPort: {{.Values.jupyter_internal_port}}
         resources:
