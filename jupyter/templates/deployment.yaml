@@ -188,7 +188,7 @@ metadata:
   name: jupyter-ingress
 spec:
   rules:
-  - host: nb.jupydemo.{{.Values.domain}}
+  - host: notebook.{{.Values.domain}}
     http:
       paths:
       - path: /
