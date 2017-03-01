@@ -50,6 +50,7 @@ spec:
         volumeMounts:
           - mountPath: {{.Values.jupyter_mount_path}}
             name: shared-volume
+            subPath: jupyter
       volumes:
         - name: shared-volume
           persistentVolumeClaim:
