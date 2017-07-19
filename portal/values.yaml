@@ -20,4 +20,9 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
+mysql:
+  mysqlRootPassword: "backend"
+  mysqlUser: "backend-user"
+  mysqlPassword: "htgcsak"
+  mysqlDatabase: "phenomenal"
 
