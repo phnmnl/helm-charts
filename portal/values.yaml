@@ -25,4 +25,10 @@ mysql:
   mysqlUser: "backend-user"
   mysqlPassword: "htgcsak"
   mysqlDatabase: "phenomenal"
+backend:
+  image: 
+     repo: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
+     tag: latest
+  port: 8888
+
 

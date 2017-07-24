@@ -11,8 +11,11 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: '{{ .Values.image.repository }}:{{ .Values.tag }}'
-        command: ["nginx","-g", "daemon off;"]
+        image: '{{ .Values.image.repository }}:{{ .Values.image.tag }}'
+        command: ["/bin/bash","-c","./setup_backend_host.sh && nginx -g 'daemon off;'"]
+        env:
+        - name: "BACKEND_HOST"
+          value: {{ .Release.Name }}-backend
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:
