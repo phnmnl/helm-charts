@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   container-test:
   - apiVersion: v1
-    created: 2017-03-01T21:07:46.47206259Z
+    created: 2017-07-25T10:14:23.694921796+01:00
     description: A Helm chart to serve as template for container testing
     digest: 8dde2d2972f8464829654d6396db46da0bdea9f649f37cc2094075ad3c61bce8
     name: container-test
@@ -10,7 +10,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/container-test-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2017-03-01T21:07:46.471641604Z
+    created: 2017-07-25T10:14:23.694455053+01:00
     description: A Helm chart to serve as template for container testing
     digest: b821b4515f5191c0b6c8a157a0f158fe3b20b6b53f78afac0022a49d515fc2dc
     name: container-test
@@ -19,7 +19,7 @@ entries:
     version: 0.1.0
   jupyter:
   - apiVersion: v1
-    created: 2017-03-01T21:07:46.475052856Z
+    created: 2017-07-25T10:14:23.695907477+01:00
     description: A Helm chart for deploying jupyter
     digest: c1052bfcfe93f77a737c0f8eedfc352ab449a20ca520325e6e2e20c24c2b6556
     name: jupyter
@@ -27,11 +27,20 @@ entries:
     - https://phnmnl.github.io/helm-charts/jupyter-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2017-03-01T21:07:46.472465984Z
+    created: 2017-07-25T10:14:23.695319763+01:00
     description: A Helm chart for deploying jupyter
     digest: 18d8ef46e59954e096f5690fff607732ca80cb8b65bcd72d26595dc94e37ffc6
     name: jupyter
     urls:
     - https://phnmnl.github.io/helm-charts/jupyter-0.1.0.tgz
     version: 0.1.0
-generated: 2017-03-01T21:07:46.470054256Z
+  portal:
+  - apiVersion: v1
+    created: 2017-07-25T10:14:23.696448701+01:00
+    description: PhenoMeNal Portal
+    digest: bbc3fbf61f76fa028f1fb17983f1fa2c645576f2ec462e1c1914b8620bc4dece
+    name: portal
+    urls:
+    - https://phnmnl.github.io/helm-charts/portal-1.0.0-alpha.0.tgz
+    version: 1.0.0-alpha.0
+generated: 2017-07-25T10:14:23.693938782+01:00
