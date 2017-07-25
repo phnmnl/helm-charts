@@ -8,6 +8,19 @@ spec:
     metadata:
       labels:
         app: {{ .Values.deployment.name }}
+      annotations:
+        pod.beta.kubernetes.io/init-containers: |-
+          [
+            {
+              "name": "backend-listener",
+              "image": "alpine",
+              "imagePullPolicy": "IfNotPresent",
+              "command": [
+                "sh", "-c",
+                "for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-backend 8888 && exit 0 || sleep 3; done; exit 1"
+              ]
+            }
+          ]
     spec:
       containers:
       - name: {{ .Chart.Name }}
