@@ -30,5 +30,22 @@ backend:
      repo: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
      tag: latest
   port: 8888
+app_library:
+  replicaCount: 1
+  deployment:
+    name: phenomenal-portal-app-library
+  image:
+    repository: container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal-app-library
+    tag: latest
+  service:
+    name: http
+    internalPort: 80
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
 
 

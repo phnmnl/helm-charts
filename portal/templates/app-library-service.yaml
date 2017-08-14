@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-app-library
+spec:
+  type:
+  ports:
+  - name: {{ .Values.app_library.service.name }}
+    port: {{ .Values.app_library.service.internalPort }}
+  selector:
+    app: {{ .Release.Name }}-app-library

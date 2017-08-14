@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app-library
+spec:
+  replicas: {{ .Values.app_library.replicaCount }}
+  template: 
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app-library
+    spec:
+      containers:
+      - name: app-library-container
+        image: '{{ .Values.app_library.image.repository }}:{{ .Values.app_library.image.tag }}'
+        ports:
+        - containerPort: {{ .Values.app_library.service.internalPort }}
+        resources:
+{{ toYaml .Values.app_library.resources | indent 12 }}

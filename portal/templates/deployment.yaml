@@ -29,6 +29,8 @@ spec:
         env:
         - name: "BACKEND_HOST"
           value: {{ .Release.Name }}-backend
+        - name: "APPLIBRARY_HOST"
+          value: {{ .Release.Name }}-app-library
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:
