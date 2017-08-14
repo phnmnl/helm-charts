@@ -31,6 +31,12 @@ spec:
           value: {{ .Release.Name }}-backend
         - name: "APPLIBRARY_HOST"
           value: {{ .Release.Name }}-app-library
+{{ if and .Values.galaxy_url .Values.galaxy_api_key }}
+        - name: "PORTAL_GALAXY_URL"
+          value: {{ .Values.galaxy_url }}
+        - name: "PORTAL_GALAXY_API_KEY"
+          value: {{ .Values.galaxy_api_key }}
+{{ end }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:

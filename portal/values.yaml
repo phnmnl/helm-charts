@@ -1,7 +1,13 @@
 # Default values for portal.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-# helm install --set image.repository=my-nginx
+#
+# For allowing the Galaxy user creation, a valid galaxy api key and galaxy URL need to be provided.
+# helm install --set galaxy_api_key=QWERTYT,galaxy_url="https://publicdev.phenomenal-h2020.eu/" phenomenal/portal
+#
+# To avoid using persistence on a cluster installation
+# helm install --set mysql.persistence.enabled=false phenomenal/portal
+#
 replicaCount: 1
 deployment:
   name: phenomenal-portal
