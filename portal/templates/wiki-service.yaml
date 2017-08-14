@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-wiki
+spec:
+  type:
+  ports:
+  - name: {{ .Values.wiki.service.name }}
+    port: {{ .Values.wiki.service.internalPort }}
+  selector:
+    app: {{ .Release.Name }}-wiki

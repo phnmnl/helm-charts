@@ -53,5 +53,22 @@ app_library:
     requests:
       cpu: 100m
       memory: 128Mi
+wiki:
+  replicaCount: 1
+  deployment:
+    name: phenomenal-portal-wiki
+  image:
+    repository: container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal-wiki
+    tag: latest
+  service:
+    name: http
+    internalPort: 80
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
 
 

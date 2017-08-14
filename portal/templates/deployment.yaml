@@ -37,6 +37,8 @@ spec:
         - name: "PORTAL_GALAXY_API_KEY"
           value: {{ .Values.galaxy_api_key }}
 {{ end }}
+        - name: "WIKI_HOST"
+          value: {{ .Release.Name }}-wiki
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:

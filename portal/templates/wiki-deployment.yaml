@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-wiki
+spec:
+  replicas: {{ .Values.wiki.replicaCount }}
+  template: 
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-wiki
+    spec:
+      containers:
+      - name: wiki-container
+        image: '{{ .Values.wiki.image.repository }}:{{ .Values.wiki.image.tag }}'
+        ports:
+        - containerPort: {{ .Values.wiki.service.internalPort }}
+        resources:
+{{ toYaml .Values.wiki.resources | indent 12 }}
