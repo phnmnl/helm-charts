@@ -38,3 +38,4 @@ jupyter_pvc_capacity: "1Gi"
 
 # Ingress
 domain: "mydomain.dev"
+hostname: "notebook"
