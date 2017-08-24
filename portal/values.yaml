@@ -38,6 +38,7 @@ backend:
   port: 8888
 app_library:
   replicaCount: 1
+  branch: master
   deployment:
     name: phenomenal-portal-app-library
   image:

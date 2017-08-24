@@ -12,7 +12,11 @@ spec:
       containers:
       - name: app-library-container
         image: '{{ .Values.app_library.image.repository }}:{{ .Values.app_library.image.tag }}'
+        command: ["/bin/bash", "-c", "./bin/run.sh && /my_init"]
         ports:
         - containerPort: {{ .Values.app_library.service.internalPort }}
+        env:
+           - name: "GIT_BRANCH"
+             value: {{ .Values.app_library.branch }} 
         resources:
 {{ toYaml .Values.app_library.resources | indent 12 }}
