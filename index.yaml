@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   container-test:
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.836117565+01:00
+    created: 2017-08-25T15:55:28.675379295+01:00
     description: A Helm chart to serve as template for container testing
     digest: 8dde2d2972f8464829654d6396db46da0bdea9f649f37cc2094075ad3c61bce8
     name: container-test
@@ -10,7 +10,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/container-test-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.835214979+01:00
+    created: 2017-08-25T15:55:28.674537356+01:00
     description: A Helm chart to serve as template for container testing
     digest: b821b4515f5191c0b6c8a157a0f158fe3b20b6b53f78afac0022a49d515fc2dc
     name: container-test
@@ -19,7 +19,7 @@ entries:
     version: 0.1.0
   jupyter:
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.839635008+01:00
+    created: 2017-08-25T15:55:28.676691646+01:00
     description: A Helm chart for deploying jupyter
     digest: 081f478d733ec45b20a6b6a3f2216fb95c03217b57bcc9adacc682af2846643b
     name: jupyter
@@ -27,7 +27,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/jupyter-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.83842154+01:00
+    created: 2017-08-25T15:55:28.676281388+01:00
     description: A Helm chart for deploying jupyter
     digest: c1052bfcfe93f77a737c0f8eedfc352ab449a20ca520325e6e2e20c24c2b6556
     name: jupyter
@@ -35,7 +35,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/jupyter-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.837225567+01:00
+    created: 2017-08-25T15:55:28.675787335+01:00
     description: A Helm chart for deploying jupyter
     digest: 18d8ef46e59954e096f5690fff607732ca80cb8b65bcd72d26595dc94e37ffc6
     name: jupyter
@@ -44,7 +44,15 @@ entries:
     version: 0.1.0
   portal:
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.848462986+01:00
+    created: 2017-08-25T15:55:28.682790101+01:00
+    description: PhenoMeNal Portal
+    digest: 2fd1345231c7a02176cb4f0477d0b58721e9d317f1a46d8b30fa026b3f76115f
+    name: portal
+    urls:
+    - https://phnmnl.github.io/helm-charts/portal-1.1.4.tgz
+    version: 1.1.4
+  - apiVersion: v1
+    created: 2017-08-25T15:55:28.68208244+01:00
     description: PhenoMeNal Portal
     digest: 319503d5688322703450efd0fa0081e61a523b4b93dffe53e443d299d53f818a
     name: portal
@@ -52,7 +60,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/portal-1.1.3.tgz
     version: 1.1.3
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.847117061+01:00
+    created: 2017-08-25T15:55:28.680908654+01:00
     description: PhenoMeNal Portal
     digest: 457d5a567ff11be5e838cd7cd37e4293ea9febd8f2cb99f1a64bbc282d11b03b
     name: portal
@@ -60,7 +68,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/portal-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.845453679+01:00
+    created: 2017-08-25T15:55:28.679824557+01:00
     description: PhenoMeNal Portal
     digest: 324cb1c5a7b58a85b52f1b12b1c8396fededd8a6e5b9067348438909689aa0dd
     name: portal
@@ -68,7 +76,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/portal-1.1.1.tgz
     version: 1.1.1
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.843858662+01:00
+    created: 2017-08-25T15:55:28.678732948+01:00
     description: PhenoMeNal Portal
     digest: 57e2754b03c09b2fb7a3432ac9fca7fd12560a59da8bbcda49ce4c1b0c94ce04
     name: portal
@@ -76,7 +84,7 @@ entries:
     - https://phnmnl.github.io/helm-charts/portal-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.841601087+01:00
+    created: 2017-08-25T15:55:28.677862761+01:00
     description: PhenoMeNal Portal
     digest: bbc3fbf61f76fa028f1fb17983f1fa2c645576f2ec462e1c1914b8620bc4dece
     name: portal
@@ -84,11 +92,11 @@ entries:
     - https://phnmnl.github.io/helm-charts/portal-1.0.0-alpha.0.tgz
     version: 1.0.0-alpha.0
   - apiVersion: v1
-    created: 2017-08-24T17:51:57.840308048+01:00
+    created: 2017-08-25T15:55:28.677028141+01:00
     description: PhenoMeNal Portal
     digest: 2c0989d68b979abd38815165fc20d4df6d22f3bf52a8c507ff7bff2d038b3bb6
     name: portal
     urls:
     - https://phnmnl.github.io/helm-charts/portal-0.1.0.tgz
     version: 0.1.0
-generated: 2017-08-24T17:51:57.834236746+01:00
+generated: 2017-08-25T15:55:28.673204589+01:00
