@@ -8,9 +8,9 @@ To use this repo with your local Helm installation, to deploy to your Kubernetes
 $ helm repo add phenomenal https://phnmnl.github.io/helm-charts/
 ```
 
-## Portal Helm Charts
+## PhenoMeNal Portal Chart
 
-# On Minikube
+### On Minikube
 
 For deploying on Minikube, with automatic persistence:
 
