@@ -50,6 +50,7 @@ spec:
           limits:
             memory: {{.Values.jupyter_resource_limits_memory}}
             cpu: {{.Values.jupyter_resource_limits_cpu}}
+{{ if .Values.jupyter_pvc }}
         volumeMounts:
           - mountPath: {{.Values.jupyter_mount_path}}
             name: shared-volume
@@ -58,6 +59,7 @@ spec:
         - name: shared-volume
           persistentVolumeClaim:
             claimName: {{.Values.jupyter_pvc}}
+{{ end }}
       restartPolicy: Always
             
 ---
