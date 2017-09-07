@@ -47,6 +47,9 @@ spec:
           requests:
             memory: {{.Values.jupyter_resource_req_memory}}
             cpu: {{.Values.jupyter_resource_req_cpu}}
+          limits:
+            memory: {{.Values.jupyter_resource_limits_memory}}
+            cpu: {{.Values.jupyter_resource_limits_cpu}}
         volumeMounts:
           - mountPath: {{.Values.jupyter_mount_path}}
             name: shared-volume
