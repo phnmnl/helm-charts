@@ -30,7 +30,7 @@ jupyter_pull_policy: "Always"
 jupyter_internal_port: 8888
 jupyter_external_port: 8888
 jupyter_node_port_exposed: 30712
-jupyter_resource_req_memory: 2G
+jupyter_resource_req_memory: 4G
 jupyter_resource_req_cpu: 2
 jupyter_mount_path: "/home/jovyan/work"
 jupyter_pvc: "jupyter-volume-claim"
