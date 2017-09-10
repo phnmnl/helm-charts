@@ -1,4 +1,4 @@
-{{ if not .Values.pvc_exists }}
+{{ if and (not .Values.pvc_exists) .Values.jupyter_pvc }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
