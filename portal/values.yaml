@@ -9,6 +9,8 @@
 # helm install --set mysql.persistence.enabled=false phenomenal/portal
 #
 replicaCount: 1
+tsi_portal_url: "https://api.portal.tsi.ebi.ac.uk/"
+cloud_deploy_git_repo: "https://github.com/andersla/cloud-deploy-kubenow.git"
 deployment:
   name: phenomenal-portal
 image:

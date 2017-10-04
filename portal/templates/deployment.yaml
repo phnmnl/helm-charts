@@ -39,6 +39,12 @@ spec:
 {{ end }}
         - name: "WIKI_HOST"
           value: {{ .Release.Name }}-wiki
+        - name: "TSI_PORTAL_URL"
+          value: {{ .Values.tsi_portal_url }}
+        - name: "PORTAL_ANNOUNCEMENT"
+          value: {{ .Values.portal_announcement }}
+        - name: "CLOUD_DEPLOY_GIT_REPO"
+          value: {{ .Values.cloud_deploy_git_repo }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:
