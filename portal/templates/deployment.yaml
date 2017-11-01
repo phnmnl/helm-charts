@@ -41,6 +41,8 @@ spec:
           value: {{ .Release.Name }}-wiki
         - name: "TSI_PORTAL_URL"
           value: {{ .Values.tsi_portal_url }}
+        - name: "AAP_URL"
+          value: {{ .Values.aap_url }} 
         - name: "PORTAL_ANNOUNCEMENT"
           value: {{ .Values.portal_announcement }}
         - name: "CLOUD_DEPLOY_GIT_REPO"

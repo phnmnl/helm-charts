@@ -10,6 +10,7 @@
 #
 replicaCount: 1
 tsi_portal_url: "https://api.portal.tsi.ebi.ac.uk/"
+aap_url: "https://api.aai.ebi.ac.uk/"
 cloud_deploy_git_repo: "https://github.com/andersla/cloud-deploy-kubenow.git"
 deployment:
   name: phenomenal-portal
