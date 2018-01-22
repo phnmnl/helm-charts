@@ -1,34 +1,35 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Values.deployment.name }}
+  name: {{ .Values.frontend.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   template: 
     metadata:
       labels:
-        app: {{ .Values.deployment.name }}
+        app: {{ .Values.frontend.name }}
       annotations:
         pod.beta.kubernetes.io/init-containers: |-
           [
             {
-              "name": "backend-listener",
+              "name": "metadata-listener",
               "image": "alpine",
               "imagePullPolicy": "IfNotPresent",
               "command": [
                 "sh", "-c",
-                "for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-backend 8888 && exit 0 || sleep 3; done; exit 1"
+                "for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1"
               ]
             }
           ]
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: '{{ .Values.image.repository }}:{{ .Values.image.tag }}'
+        image: '{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}'
         command: ["/bin/bash","-c","./setup_backend_host.sh && nginx -g 'daemon off;'"]
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
         env:
-        - name: "BACKEND_HOST"
-          value: {{ .Release.Name }}-backend
+        - name: "METADATA_HOST"
+          value: {{ .Release.Name }}-metadata
         - name: "APPLIBRARY_HOST"
           value: {{ .Release.Name }}-app-library
 {{ if and .Values.galaxy_url .Values.galaxy_api_key }}
@@ -48,6 +49,6 @@ spec:
         - name: "CLOUD_DEPLOY_GIT_REPO"
           value: {{ .Values.cloud_deploy_git_repo }}
         ports:
-        - containerPort: {{ .Values.service.internalPort }}
+        - containerPort: {{ .Values.frontend.service.internalPort }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}

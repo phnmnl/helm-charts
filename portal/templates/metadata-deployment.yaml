@@ -1,13 +1,13 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-backend
+  name: {{ .Release.Name }}-metadata
 spec:
   replicas: 1
   template: 
     metadata:
       labels:
-         app: {{ .Release.Name }}-backend
+         app: {{ .Release.Name }}-metadata
       annotations:
         pod.beta.kubernetes.io/init-containers: |-
           [
@@ -23,9 +23,11 @@ spec:
           ]
     spec:
       containers:
-      - name: backend
-        image: '{{ .Values.backend.image.repo }}:{{ .Values.backend.image.tag }}'
-        command: ["/bin/bash","-c","./setup_connection.sh && propel sql:build --config-dir schema --schema-dir schema && propel config:convert --config-dir schema --output-dir schema/generated-conf && propel sql:insert --config-dir schema && php -S 0.0.0.0:{{ .Values.backend.port }} -t public public/index.php"]
+      - name: metadata
+        image: '{{ .Values.metadata.image.repository }}:{{ .Values.metadata.image.tag }}'
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
+        # The 'entrypoint.sh' is available since the version '1.0.0' of the Metadata backend container
+        command: ["entrypoint.sh", "{{ .Values.metadata.port }}"]
         env:
             - name: "MYSQL_DATABASE"
               value: {{ .Values.mysql.mysqlDatabase }}
@@ -35,5 +37,9 @@ spec:
               value: {{ .Values.mysql.mysqlPassword }}
             - name: "MYSQL_HOST"
               value: "{{ .Release.Name }}-mysql"
+            - name: "GALAXY_URL"
+              value: {{ .Values.galaxy_url }}
+            - name: "GALAXY_API_KEY"
+              value: {{ .Values.galaxy_api_key }}
         ports:
-        - containerPort: {{ .Values.backend.port }}
+        - containerPort: {{ .Values.metadata.port }}

@@ -12,6 +12,7 @@ spec:
       containers:
       - name: app-library-container
         image: '{{ .Values.app_library.image.repository }}:{{ .Values.app_library.image.tag }}'
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
         command: ["/bin/bash", "-c", "./bin/run.sh && /my_init"]
         ports:
         - containerPort: {{ .Values.app_library.service.internalPort }}

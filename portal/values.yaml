@@ -8,37 +8,51 @@
 # To avoid using persistence on a cluster installation
 # helm install --set mysql.persistence.enabled=false phenomenal/portal
 #
+
+# global settings
 replicaCount: 1
 tsi_portal_url: "https://api.portal.tsi.ebi.ac.uk/"
 aap_url: "https://api.aai.ebi.ac.uk/"
 cloud_deploy_git_repo: "https://github.com/andersla/cloud-deploy-kubenow.git"
-deployment:
+imagePullPolicy: "Always"
+galaxy_url: "https://public.phenomenal-h2020.eu"
+galaxy_api_key: ""
+
+# frontend settings
+frontend:
   name: phenomenal-portal
-image:
-  repository: container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal
-  tag: latest
-service:
-  name: http
-  type: NodePort
-  externalPort: 30766
-  internalPort: 80
-resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
+  image:
+    repository: container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal
+    tag: latest
+  service:
+    name: http
+    type: NodePort
+    externalPort: 30766
+    internalPort: 80
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+# mysql settings
 mysql:
   mysqlRootPassword: "backend"
   mysqlUser: "backend-user"
   mysqlPassword: "htgcsak"
   mysqlDatabase: "phenomenal"
-backend:
+
+# metadata backend settings
+metadata:
+  name: phenomenal-portal-metadata
   image: 
-     repo: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
+     repository: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
      tag: latest
   port: 8888
+
+# app library settings
 app_library:
   replicaCount: 1
   branch: master
@@ -57,6 +71,8 @@ app_library:
     requests:
       cpu: 100m
       memory: 128Mi
+
+# wiki backend settings
 wiki:
   replicaCount: 1
   deployment:

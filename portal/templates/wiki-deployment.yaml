@@ -12,6 +12,7 @@ spec:
       containers:
       - name: wiki-container
         image: '{{ .Values.wiki.image.repository }}:{{ .Values.wiki.image.tag }}'
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
         command: ["/bin/bash", "-c", "./bin/run.sh && /my_init"]
         ports:
         - containerPort: {{ .Values.wiki.service.internalPort }}
