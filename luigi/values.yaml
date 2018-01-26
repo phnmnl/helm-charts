@@ -1,0 +1,40 @@
+## Main luigi-deployment container currently hosted here:
+## https://github.com/phnmnl/container-luigi
+##
+image:
+    pullPolicy: IfNotPresent
+    repository: container-registry.phenomenal-h2020.eu/phnmnl/luigi
+    tag: v2.6.0_cv0.1.5
+
+## Assuming use of ingress controllers
+## ref: https://kubernetes.io/docs/concepts/services-networking/ingress/
+##
+ingress:
+    enabled: true
+    host: ""
+    servicePort: 8082
+    
+replicaCount: 1
+
+## Minimal resources settings for running the Luigi's container
+## Resources can of course be increased if need be 
+##
+resources:
+  limits:
+    cpu: 200m
+    memory: 1Gi
+  requests:
+    cpu: 200m
+    memory: 1Gi
+
+## Basic luigi-service parameters  
+## 
+##
+service:
+    internalPort: 8082
+    externalPort: 8082
+    loadBalancerIP: ""
+    name: "http"
+    nodePortExposed: ""
+    type: "ClusterIP"
+    

@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "name" . }}-service
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  {{- if eq .Values.service.type "LoadBalancer" }}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
+  {{- end }}
+  ports:
+  - name: {{ .Values.service.name }}
+    port: {{ .Values.service.externalPort }}
+    {{- if eq .Values.service.type "NodePort" }}
+    nodePort: {{.Values.service.nodePortExposed}}
+    {{- else }}
+    targetPort: {{ .Values.service.internalPort }}
+    {{- end }}
+  selector:
+    app: {{ template "name" . }}
+    task: {{ template "name" . }}-task
+    release: {{ .Release.Name }}

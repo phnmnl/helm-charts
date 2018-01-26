@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+description: "Luigi deployment described by https://github.com/spotify/luigi"
+name: luigi
+version: 0.1.0
+home: "https://github.com/phnmnl/container-luigi"
+sources:
+  - "https://github.com/phnmnl/container-luigi"
+icon: "https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png"
+maintainers:
+  - name: Marco Capuccini
+    email: marco.capuccini@it.uu.se
+  - name: Matteo Carone
+    email: matteo.carone@farmbio.uu.se
+  - name: Anders Larsson
+    email: anders.larsson@icm.uu.se
