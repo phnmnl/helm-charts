@@ -11,13 +11,14 @@ image:
 ##
 ingress:
     enabled: true
-    host: ""
+    hostname: "luigi"
+    domain: "mydomain.dev"
     servicePort: 8082
-    
+
 replicaCount: 1
 
 ## Minimal resources settings for running the Luigi's container
-## Resources can of course be increased if need be 
+## Resources can of course be increased if need be
 ##
 resources:
   limits:
@@ -27,8 +28,8 @@ resources:
     cpu: 200m
     memory: 1Gi
 
-## Basic luigi-service parameters  
-## 
+## Basic luigi-service parameters
+##
 ##
 service:
     internalPort: 8082
@@ -37,4 +38,4 @@ service:
     name: "http"
     nodePortExposed: ""
     type: "ClusterIP"
-    
+

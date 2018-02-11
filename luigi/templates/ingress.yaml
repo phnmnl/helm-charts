@@ -10,7 +10,7 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   rules:
-  - host: {{ .Chart.Name }}.{{ .Values.ingress.host }}
+  - host: {{ .Values.ingress.hostname }}.{{ .Values.ingress.domain }}
     http:
       paths:
       - path: /
