@@ -13,10 +13,11 @@
 replicaCount: 1
 tsi_portal_url: "https://api.portal.tsi.ebi.ac.uk/"
 aap_url: "https://api.aai.ebi.ac.uk/"
-cloud_deploy_git_repo: "https://github.com/andersla/cloud-deploy-kubenow.git"
+cloud_deploy_git_repo: "https://github.com/phnmnl/cloud-deploy-kubenow.git"
 imagePullPolicy: "Always"
 galaxy_url: "https://public.phenomenal-h2020.eu"
 galaxy_api_key: ""
+enable_https: "true"
 
 # frontend settings
 frontend:
@@ -27,7 +28,7 @@ frontend:
   service:
     name: http
     type: NodePort
-    externalPort: 30766
+    externalPort: 30767
     internalPort: 80
   resources:
     limits:

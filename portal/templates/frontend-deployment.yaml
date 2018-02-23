@@ -48,6 +48,8 @@ spec:
           value: {{ .Values.portal_announcement }}
         - name: "CLOUD_DEPLOY_GIT_REPO"
           value: {{ .Values.cloud_deploy_git_repo }}
+        - name: "ENABLE_HTTPS"
+          value: "{{ .Values.enable_https }}"
         ports:
         - containerPort: {{ .Values.frontend.service.internalPort }}
         resources:
