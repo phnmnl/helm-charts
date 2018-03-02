@@ -36,6 +36,7 @@ The following tables lists the configurable parameters of the chart and their de
 | `image.repository`       | Luigi image                               | `container-registry.phenomenal-h2020.eu/phnmnl/luigi`  |
 | `image.tag`              | Image's tag                               | `v2.6.0_cv0.1.5`                                       |
 | `image.pullPolicy`       | Image pull policy                         | `IfNotPresent`                                         |
+| `ingress.annotations`    | Specify ingress annotations               | `kubernetes.io/ingress.class: nginx`                   |
 | `ingress.enabled`        | Assuming use of ingress controllers       | `true`                                                 |                                                 
 | `ingress.host`           | Luigi host to create application URLs     | `nil`                                                  |
 | `ingress.servicePort`    | Kubernetes Ingress backend (service:port) | `8082`                                                 |
