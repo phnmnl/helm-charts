@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   container-test:
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.923651704+01:00
+    created: 2018-03-06T14:20:01.101245348+01:00
     description: A Helm chart to serve as template for container testing
     digest: 8dde2d2972f8464829654d6396db46da0bdea9f649f37cc2094075ad3c61bce8
     name: container-test
@@ -10,7 +10,7 @@ entries:
     - container-test-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.915257589+01:00
+    created: 2018-03-06T14:20:01.101120038+01:00
     description: A Helm chart to serve as template for container testing
     digest: b821b4515f5191c0b6c8a157a0f158fe3b20b6b53f78afac0022a49d515fc2dc
     name: container-test
@@ -19,7 +19,7 @@ entries:
     version: 0.1.0
   jupyter:
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.96115236+01:00
+    created: 2018-03-06T14:20:01.10232574+01:00
     description: A Helm chart for deploying jupyter
     digest: d402b9f638ecccad34a818445c66318d68103dff7cfb5a50ce7101ea9952a478
     name: jupyter
@@ -27,7 +27,7 @@ entries:
     - jupyter-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.949320065+01:00
+    created: 2018-03-06T14:20:01.101811235+01:00
     description: A Helm chart for deploying jupyter
     digest: 081f478d733ec45b20a6b6a3f2216fb95c03217b57bcc9adacc682af2846643b
     name: jupyter
@@ -35,7 +35,7 @@ entries:
     - jupyter-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.940174601+01:00
+    created: 2018-03-06T14:20:01.101620249+01:00
     description: A Helm chart for deploying jupyter
     digest: c1052bfcfe93f77a737c0f8eedfc352ab449a20ca520325e6e2e20c24c2b6556
     name: jupyter
@@ -43,7 +43,7 @@ entries:
     - jupyter-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.932055093+01:00
+    created: 2018-03-06T14:20:01.101440562+01:00
     description: A Helm chart for deploying jupyter
     digest: 18d8ef46e59954e096f5690fff607732ca80cb8b65bcd72d26595dc94e37ffc6
     name: jupyter
@@ -52,7 +52,26 @@ entries:
     version: 0.1.0
   luigi:
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.990837786+01:00
+    created: 2018-03-06T14:20:01.105456943+01:00
+    description: Luigi deployment described by https://github.com/spotify/luigi
+    digest: afbf6d726af9da348480ab83efe0c93e2c823984407f9ac9e2e9d3e99581c156
+    home: https://github.com/phnmnl/container-luigi
+    icon: https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png
+    maintainers:
+    - email: marco.capuccini@it.uu.se
+      name: Marco Capuccini
+    - email: matteo.carone@farmbio.uu.se
+      name: Matteo Carone
+    - email: anders.larsson@icm.uu.se
+      name: Anders Larsson
+    name: luigi
+    sources:
+    - https://github.com/phnmnl/container-luigi
+    urls:
+    - luigi-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    created: 2018-03-06T14:20:01.104404823+01:00
     description: Luigi deployment described by https://github.com/spotify/luigi
     digest: 7134d36efb254daaaa1cb8c44757e92d64d8d4e848b279ff19e020c8a191f4e5
     home: https://github.com/phnmnl/container-luigi
@@ -71,7 +90,7 @@ entries:
     - luigi-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.974887727+01:00
+    created: 2018-03-06T14:20:01.103420371+01:00
     description: Luigi deployment described by https://github.com/spotify/luigi
     digest: 8f2333f9adb7ab1f6b84bb52c44ec5142e53c3b50329f49a54b65a21aeaf250e
     home: https://github.com/phnmnl/container-luigi
@@ -91,7 +110,7 @@ entries:
     version: 0.1.0
   minio:
   - apiVersion: v1
-    created: 2018-03-05T22:11:16.999816919+01:00
+    created: 2018-03-06T14:20:01.105987094+01:00
     description: Distributed object storage server built for cloud applications and
       devops.
     digest: db76a6e746d312eed846ad859682b5d431ac755ce6519fd89808955ba444b0d0
@@ -114,7 +133,7 @@ entries:
     version: 0.5.0
   monitor:
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.00728584+01:00
+    created: 2018-03-06T14:20:01.106147912+01:00
     description: A Helm chart for deploying Heapster->InfluxDB->Grafana
     digest: f9792e576879d74340ea822271c114161aa78419291a116021d2a65a6b64c4b9
     name: monitor
@@ -123,8 +142,7 @@ entries:
     version: 0.0.2
   pachyderm:
   - apiVersion: v1
-    appVersion: 1.6.7
-    created: 2018-03-05T22:11:17.017015094+01:00
+    created: 2018-03-06T14:20:01.106553245+01:00
     description: |
       Pachyderm is a large-scale container-based workflow engine that offers complete version control for data and reproducible data processing
     digest: 3aea78942c63f42bee0d3c354d1625a362fbb0ff391e59cc870b32f341b3f2aa
@@ -151,7 +169,7 @@ entries:
     version: 0.1.5
   portal:
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.1241712+01:00
+    created: 2018-03-06T14:20:01.113121267+01:00
     description: PhenoMeNal Portal
     digest: 796fb11d4447fcd068b57eb1db960cd568db895baf3534175fd8ca2019b159f4
     name: portal
@@ -159,7 +177,7 @@ entries:
     - portal-2.1.0.tgz
     version: 2.1.0
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.114360733+01:00
+    created: 2018-03-06T14:20:01.112318627+01:00
     description: PhenoMeNal Portal
     digest: 560e13447faa6fdcaed94f45aa1e7e727d7e0c7e0a11d8e96766e0211cc9d03f
     name: portal
@@ -167,7 +185,7 @@ entries:
     - portal-2.0.0.tgz
     version: 2.0.0
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.105005674+01:00
+    created: 2018-03-06T14:20:01.111521921+01:00
     description: PhenoMeNal Portal
     digest: 0b4b203b7b3fd26fff0db518070d902d9878101d242a9560f642f9c58e4af581
     name: portal
@@ -175,7 +193,7 @@ entries:
     - portal-1.1.6.tgz
     version: 1.1.6
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.094299295+01:00
+    created: 2018-03-06T14:20:01.110291026+01:00
     description: PhenoMeNal Portal
     digest: 87cefff30acf19839183544f1f2877872e6af26b3b3a55f09058283e88eb215d
     name: portal
@@ -183,7 +201,7 @@ entries:
     - portal-1.1.5.tgz
     version: 1.1.5
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.084975669+01:00
+    created: 2018-03-06T14:20:01.109747428+01:00
     description: PhenoMeNal Portal
     digest: 2fd1345231c7a02176cb4f0477d0b58721e9d317f1a46d8b30fa026b3f76115f
     name: portal
@@ -191,7 +209,7 @@ entries:
     - portal-1.1.4.tgz
     version: 1.1.4
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.075576657+01:00
+    created: 2018-03-06T14:20:01.109207971+01:00
     description: PhenoMeNal Portal
     digest: 319503d5688322703450efd0fa0081e61a523b4b93dffe53e443d299d53f818a
     name: portal
@@ -199,7 +217,7 @@ entries:
     - portal-1.1.3.tgz
     version: 1.1.3
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.064966516+01:00
+    created: 2018-03-06T14:20:01.108618035+01:00
     description: PhenoMeNal Portal
     digest: 457d5a567ff11be5e838cd7cd37e4293ea9febd8f2cb99f1a64bbc282d11b03b
     name: portal
@@ -207,7 +225,7 @@ entries:
     - portal-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.055095712+01:00
+    created: 2018-03-06T14:20:01.108074045+01:00
     description: PhenoMeNal Portal
     digest: 324cb1c5a7b58a85b52f1b12b1c8396fededd8a6e5b9067348438909689aa0dd
     name: portal
@@ -215,7 +233,7 @@ entries:
     - portal-1.1.1.tgz
     version: 1.1.1
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.046140039+01:00
+    created: 2018-03-06T14:20:01.107566626+01:00
     description: PhenoMeNal Portal
     digest: 57e2754b03c09b2fb7a3432ac9fca7fd12560a59da8bbcda49ce4c1b0c94ce04
     name: portal
@@ -223,7 +241,7 @@ entries:
     - portal-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.03589467+01:00
+    created: 2018-03-06T14:20:01.107127931+01:00
     description: PhenoMeNal Portal
     digest: bbc3fbf61f76fa028f1fb17983f1fa2c645576f2ec462e1c1914b8620bc4dece
     name: portal
@@ -231,11 +249,11 @@ entries:
     - portal-1.0.0-alpha.0.tgz
     version: 1.0.0-alpha.0
   - apiVersion: v1
-    created: 2018-03-05T22:11:17.024262498+01:00
+    created: 2018-03-06T14:20:01.106698502+01:00
     description: PhenoMeNal Portal
     digest: 2c0989d68b979abd38815165fc20d4df6d22f3bf52a8c507ff7bff2d038b3bb6
     name: portal
     urls:
     - portal-0.1.0.tgz
     version: 0.1.0
-generated: 2018-03-05T22:11:16.906990903+01:00
+generated: 2018-03-06T14:20:01.100897509+01:00
