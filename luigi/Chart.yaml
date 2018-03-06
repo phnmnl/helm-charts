@@ -2,7 +2,7 @@
 apiVersion: v1
 description: "Luigi deployment described by https://github.com/spotify/luigi"
 name: luigi
-version: 0.1.1
+version: 0.1.2
 home: "https://github.com/phnmnl/container-luigi"
 sources:
   - "https://github.com/phnmnl/container-luigi"
