@@ -43,3 +43,10 @@ spec:
               value: {{ .Values.galaxy_api_key }}
         ports:
         - containerPort: {{ .Values.metadata.port }}
+        volumeMounts:
+          - mountPath: <SETME>
+            name: metadata-pvc
+      volumes:
+        - name: metadata-pvc
+          persistentVolumeClaim:
+            claimName: {{.Values.metadata.pvc.name}}

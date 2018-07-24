@@ -52,6 +52,11 @@ metadata:
      repository: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
      tag: latest
   port: 8888
+  create_pvc: false
+  pv_hostpath: "/data/metadata-backend"
+  pvc:
+    name: metadata-pvc
+    capacity: 100Mi
 
 # app library settings
 app_library:
