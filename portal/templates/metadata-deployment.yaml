@@ -41,5 +41,19 @@ spec:
               value: {{ .Values.galaxy_url }}
             - name: "GALAXY_API_KEY"
               value: {{ .Values.galaxy_api_key }}
+            - name: "PROVIDERS_REPO"
+              value: "{{ .Values.partner_providers_repo }}"
         ports:
         - containerPort: {{ .Values.metadata.port }}
+        volumeMounts:
+          - name: secrets
+            mountPath: "/portal-metadata-backend/keys"
+            readOnly: true
+
+      volumes:
+        - name: secrets
+          secret:
+            secretName: metadata-secret
+            # I think only one of these is required, but which one?
+            mode: 0400
+            defaultMode: 0400
