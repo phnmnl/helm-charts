@@ -169,6 +169,14 @@ entries:
     version: 0.1.5
   portal:
   - apiVersion: v1
+    created: 2018-07-27T15:37:18.975151794+02:00
+    description: PhenoMeNal Portal
+    digest: 889e63deac46da3e19975d72ab2fe3afd1daa708628429f2dc0ac05077a7602e
+    name: portal
+    urls:
+    - portal-2.2.0.tgz
+    version: 2.2.0
+  - apiVersion: v1
     created: 2018-03-06T14:20:01.113121267+01:00
     description: PhenoMeNal Portal
     digest: 796fb11d4447fcd068b57eb1db960cd568db895baf3534175fd8ca2019b159f4
