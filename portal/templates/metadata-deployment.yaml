@@ -54,6 +54,4 @@ spec:
         - name: secrets
           secret:
             secretName: metadata-secret
-            # I think only one of these is required, but which one?
-            mode: 0400
             defaultMode: 0400
