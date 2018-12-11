@@ -57,5 +57,5 @@ spec:
       volumes:
         - name: secrets
           secret:
-            secretName: metadata-secret
+            secretName: {{ .Release.Name }}-metadata-secrets
             defaultMode: 0400
