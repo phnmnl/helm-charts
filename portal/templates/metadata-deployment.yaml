@@ -42,16 +42,20 @@ spec:
             - name: "GALAXY_API_KEY"
               value: {{ .Values.galaxy_api_key }}
             - name: "PROVIDERS_REPO"
-              value: "{{ .Values.partner_providers_repo }}"
+              value: {{ .Values.metadata.partner_providers_repo }}
+            - name: "PROVIDERS_REPO_KEY"
+              value: "/portal-metadata-backend/keys/partner_providers_repo_key"
+            - name: "PROVIDERS_REPO_VERSION"
+              value: {{ .Values.metadata.partner_providers_repo_version }}
         ports:
         - containerPort: {{ .Values.metadata.port }}
         volumeMounts:
-          - name: secrets
+          - name: metadata-secrets
             mountPath: "/portal-metadata-backend/keys"
             readOnly: true
 
       volumes:
-        - name: secrets
+        - name: metadata-secrets
           secret:
-            secretName: metadata-secret
+            secretName: {{ .Release.Name }}-metadata-secrets
             defaultMode: 0400
