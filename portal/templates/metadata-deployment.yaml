@@ -42,7 +42,7 @@ spec:
             - name: "GALAXY_API_KEY"
               value: {{ .Values.galaxy_api_key }}
             - name: "PROVIDERS_REPO"
-              value: "{{ .Values.partner_providers_repo }}"
+              value: {{ .Values.metadata.partner_providers_repo }}
         ports:
         - containerPort: {{ .Values.metadata.port }}
         volumeMounts:
