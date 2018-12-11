@@ -43,6 +43,8 @@ spec:
               value: {{ .Values.galaxy_api_key }}
             - name: "PROVIDERS_REPO"
               value: {{ .Values.metadata.partner_providers_repo }}
+            - name: "PROVIDERS_REPO_KEY"
+              value: "/portal-metadata-backend/keys/partner_providers_repo_key"
             - name: "PROVIDERS_REPO_VERSION"
               value: {{ .Values.metadata.partner_providers_repo_version }}
         ports:
