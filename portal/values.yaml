@@ -54,6 +54,7 @@ metadata:
   port: 8888
   partner_providers_repo: ""
   partner_providers_repo_key_file: ""
+  partner_providers_repo_version: "master"
 
 # app library settings
 app_library:
