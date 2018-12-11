@@ -52,8 +52,8 @@ metadata:
      repository: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
      tag: latest
   port: 8888
-  providers_repo: "git@bitbucket.org:crs4/partner-providers.git"
   providers_repo_key: ""
+  partner_providers_repo: ""
 
 # app library settings
 app_library:
