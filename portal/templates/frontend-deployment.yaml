@@ -10,14 +10,13 @@ spec:
         app: {{ .Values.frontend.name }}
       annotations:
     spec:
-    initContainers:
-    - image: alpine
-        name: metadata-listener
+      initContainers:
+      - name: metadata-listener
+        image: alpine
         command: 
-        - sh
-        - -c
-        - |
-            for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1
+          - sh
+          - -c
+          - for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1
       containers:
       - name: {{ .Chart.Name }}
         image: '{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}'

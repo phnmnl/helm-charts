@@ -10,13 +10,12 @@ spec:
          app: {{ .Release.Name }}-metadata
     spec:
       initContainers:
-      - image: alpine
-          name: mysql-listener
-          command: 
-          - sh
-          - -c
-          - |
-              for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1
+      - name: mysql-listener
+        image: alpine
+        command: 
+        - sh
+        - -c
+        - for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1
       containers:
       - name: metadata
         image: '{{ .Values.metadata.image.repository }}:{{ .Values.metadata.image.tag }}'
