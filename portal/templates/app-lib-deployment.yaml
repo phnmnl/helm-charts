@@ -4,7 +4,10 @@ metadata:
   name: {{ .Release.Name }}-app-library
 spec:
   replicas: {{ .Values.app_library.replicaCount }}
-  template: 
+  selector:
+    matchLabels:
+      app:  {{ .Release.Name }}-app-library
+  template:
     metadata:
       labels:
         app: {{ .Release.Name }}-app-library
@@ -18,6 +21,6 @@ spec:
         - containerPort: {{ .Values.app_library.service.internalPort }}
         env:
            - name: "GIT_BRANCH"
-             value: {{ .Values.app_library.branch }} 
+             value: {{ .Values.app_library.branch }}
         resources:
 {{ toYaml .Values.app_library.resources | indent 12 }}

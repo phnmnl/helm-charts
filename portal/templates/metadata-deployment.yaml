@@ -4,7 +4,10 @@ metadata:
   name: {{ .Release.Name }}-metadata
 spec:
   replicas: 1
-  template: 
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-metadata
+  template:
     metadata:
       labels:
          app: {{ .Release.Name }}-metadata
@@ -12,7 +15,7 @@ spec:
       initContainers:
       - name: mysql-listener
         image: alpine
-        command: 
+        command:
         - sh
         - -c
         - for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1

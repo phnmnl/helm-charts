@@ -4,7 +4,10 @@ metadata:
   name: {{ .Release.Name }}-wiki
 spec:
   replicas: {{ .Values.wiki.replicaCount }}
-  template: 
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-wiki   
+  template:
     metadata:
       labels:
         app: {{ .Release.Name }}-wiki

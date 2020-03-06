@@ -4,7 +4,10 @@ metadata:
   name: {{ .Values.frontend.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
-  template: 
+  selector:
+    matchLabels:
+      app: {{ .Values.frontend.name }}
+  template:
     metadata:
       labels:
         app: {{ .Values.frontend.name }}
@@ -13,7 +16,7 @@ spec:
       initContainers:
       - name: metadata-listener
         image: alpine
-        command: 
+        command:
           - sh
           - -c
           - for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1
@@ -38,7 +41,7 @@ spec:
         - name: "TSI_PORTAL_URL"
           value: {{ .Values.tsi_portal_url }}
         - name: "AAP_URL"
-          value: {{ .Values.aap_url }} 
+          value: {{ .Values.aap_url }}
         - name: "PORTAL_ANNOUNCEMENT"
           value: {{ .Values.portal_announcement }}
         - name: "CLOUD_DEPLOY_GIT_REPO"
