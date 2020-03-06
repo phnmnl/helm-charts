@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.frontend.name }}
@@ -9,19 +9,15 @@ spec:
       labels:
         app: {{ .Values.frontend.name }}
       annotations:
-        pod.beta.kubernetes.io/init-containers: |-
-          [
-            {
-              "name": "metadata-listener",
-              "image": "alpine",
-              "imagePullPolicy": "IfNotPresent",
-              "command": [
-                "sh", "-c",
-                "for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1"
-              ]
-            }
-          ]
     spec:
+    initContainers:
+    - image: alpine
+        name: metadata-listener
+        command: 
+        - sh
+        - -c
+        - |
+            for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-metadata 8888 && exit 0 || sleep 3; done; exit 1
       containers:
       - name: {{ .Chart.Name }}
         image: '{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}'
