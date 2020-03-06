@@ -1,4 +1,4 @@
 apiVersion: v1
 description: PhenoMeNal Portal
 name: portal
-version: 2.3.1
+version: 2.4.0
