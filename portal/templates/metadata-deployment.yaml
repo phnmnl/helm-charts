@@ -18,7 +18,7 @@ spec:
         command:
         - sh
         - -c
-        - for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-mysql 3306 && exit 0 || sleep 3; echo -n "." done; exit 1
+        - for i in $(seq 1 200); do nc -z -w3 {{ .Release.Name }}-mysql 3306 && exit 0 || sleep 3; echo -n "." ; done; exit 1
       containers:
       - name: metadata
         image: '{{ .Values.metadata.image.repository }}:{{ .Values.metadata.image.tag }}'
