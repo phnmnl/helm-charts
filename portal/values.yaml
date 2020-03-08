@@ -10,6 +10,7 @@
 #
 
 # global settings
+mydomain: "10.22.15.1.nip.io"
 replicaCount: 1
 tsi_portal_url: "https://api.portal.tsi.ebi.ac.uk/"
 aap_url: "https://api.aai.ebi.ac.uk/"
@@ -28,8 +29,8 @@ frontend:
     tag: latest
   service:
     name: http
-    type: NodePort
-    externalPort: 30767
+    type: ClusterIP
+    externalPort: 80
     internalPort: 80
   resources:
     limits:

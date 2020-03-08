@@ -1,16 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  labels:
-    app: docker-registry
   name: {{ .Values.frontend.name }}
 spec:
   rules:
-  - host: portal.10.22.15.1.nip.io
+  - host: {{ .Values.frontend.name }}.{{ .Values.mydomain }}
     http:
       paths:
       - backend:
           serviceName: {{ .Values.frontend.name }}
-          servicePort: 5000
+          servicePort: 80
         path: /
       
