@@ -6,7 +6,6 @@ spec:
   type: {{ .Values.frontend.service.type }}
   ports:
   - name: {{ .Values.frontend.service.name }}
-    nodePort: {{ .Values.frontend.service.externalPort }}
     port: {{ .Values.frontend.service.internalPort }}
   selector:
     app: {{ .Values.frontend.name }}
