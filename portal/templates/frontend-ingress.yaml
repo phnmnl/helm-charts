@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+git apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Values.frontend.name }}
@@ -11,4 +11,3 @@ spec:
           serviceName: {{ .Values.frontend.name }}
           servicePort: 80
         path: /
-      

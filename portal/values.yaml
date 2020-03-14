@@ -10,7 +10,8 @@
 #
 
 # global settings
-mydomain: "10.22.15.1.nip.io"
+mydomain: "phenomenal-h2020.eu"
+
 replicaCount: 1
 tsi_portal_url: "https://api.portal.tsi.ebi.ac.uk/"
 aap_url: "https://api.aai.ebi.ac.uk/"
