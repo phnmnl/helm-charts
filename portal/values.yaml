@@ -24,7 +24,7 @@ enable_https: "true"
 
 # frontend settings
 frontend:
-  name: phenomenal-portal
+  name: portal
   image:
     repository: container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal
     tag: latest
