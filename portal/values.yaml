@@ -21,6 +21,7 @@ imagePullPolicy: "IfNotPresent"
 galaxy_url: "https://public.phenomenal-h2020.eu"
 galaxy_api_key: ""
 enable_https: "true"
+SiteAdminEmail: "sneumann@ipb-halle.de"
 
 # frontend settings
 frontend:
@@ -44,10 +45,9 @@ frontend:
 ingress:
   enabled: false
   annotations:
-    cert-manager.io/issuer: "letsencrypt-frontend"
+    cert-manager.io/issuer: "portal-tls-issuer"
   hosts:
     - host: portal.phenomenal-h2020.eu
-
   tls: []
 #    - secretName: portal-cert
 #      hosts:
