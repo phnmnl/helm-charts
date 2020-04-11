@@ -2,7 +2,7 @@ apiVersion: v2
 description: PhenoMeNal Portal
 name: portal
 type: application
-icon: https://msbi.ipb-halle.de/MetFragLogo232x128.png
+icon: https://pbs.twimg.com/profile_images/662304401990750208/4g1r_5gs.png
 version: 2.4.3
 
 dependencies:
