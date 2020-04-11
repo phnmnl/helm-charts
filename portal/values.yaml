@@ -41,6 +41,18 @@ frontend:
       cpu: 100m
       memory: 128Mi
 
+ingress:
+  enabled: false
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-frontend"
+  hosts:
+    - host: portal.phenomenal-h2020.eu
+
+  tls: []
+#    - secretName: portal-cert
+#      hosts:
+#        - portal.phenomenal-h2020.eu
+
 # mysql settings
 mysql:
   mysqlRootPassword: "backend"
@@ -51,7 +63,7 @@ mysql:
 # metadata backend settings
 metadata:
   name: phenomenal-portal-metadata
-  image: 
+  image:
      repository: container-registry.phenomenal-h2020.eu/phnmnl/portal-metadata-backend
      tag: latest
   port: 8888
@@ -97,5 +109,3 @@ wiki:
     requests:
       cpu: 100m
       memory: 128Mi
-
-

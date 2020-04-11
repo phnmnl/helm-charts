@@ -1,0 +1,12 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Issuer
+metadata:
+  name: letsencrypt-frontend
+spec:
+  acme:
+    server: https://portal.phenomenal-h2020.eu
+    email: sneumann@ipb-halle.de
+    privateKeySecretRef:
+      name: letsencrypt-frontend
+    http01: {}
+
